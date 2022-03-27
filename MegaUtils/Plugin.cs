@@ -25,6 +25,7 @@ namespace MegaUtils
 			instance = this;
 			ev = new EventHandler();
 			ServerHandler.WaitingForPlayers += ev.OnWaitingForPlayers;
+			ServerHandler.RoundEnded += ev.OnRoundEnded;
 			
 			base.OnEnabled();
 		}
@@ -32,6 +33,7 @@ namespace MegaUtils
 		public override void OnDisabled() 
 		{
 		        ServerHandler.WaitingForPlayers -= ev.OnWaitingForPlayers;
+			ServerHandler.RoundEnded -= ev.OnRoundEnded;
 			
 			ev = null;
 			base.OnDisabled();
