@@ -11,7 +11,7 @@ namespace MegaUtils
 		[Description("Turn on TPS Debugger.")]
 		public bool TpsDebug { get; set; } = true;
 
-		[Description("Time between every TPS check. (in miliseconds)")]
-		public int TpsCheckDelay { get; set; } = 10000;
+		[Description("Time between every TPS check. (in seconds)")]
+		public float TpsCheckDelay { get; set; } = 10;
 	}
 }

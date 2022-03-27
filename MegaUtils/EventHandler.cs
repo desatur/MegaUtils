@@ -10,10 +10,6 @@ namespace MegaUtils
 	{
 		public void OnWaitingForPlayers()
 		{
-			while (true) {
-			if (MegaUtils.instance.Config.TpsDebug) Log.Info((int)Math.Round(1.0f / Time.smoothDeltaTime));
-		    Thread.Sleep(MegaUtils.instance.Config.TpsCheckDelay);
-			}
 		}
 	}
 }
