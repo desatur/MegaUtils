@@ -90,7 +90,6 @@
     <Compile Include="Config.cs" />
     <Compile Include="EventHandler.cs" />
     <Compile Include="Plugin.cs" />
-    <Compile Include="DebuggingTools/TPS.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

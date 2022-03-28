@@ -11,20 +11,29 @@ namespace MegaUtils
 	{
 		public CoroutineHandle tpsCoroutine;
 		public IEnumerator<float> TpsCoroutine()
-                {
-                    for (; ; )
-                    {
-                         Log.Info((int)Math.Round(1f / Time.smoothDeltaTime));
-                         yield return Timing.WaitForSeconds(MegaUtils.instance.Config.TpsCheckDelay);
-                    }
-                }
+               {
+                   for (; ; )
+                   {
+                        if (MegaUtils.instance.Config.TpsDebug)
+                        {
+                        Log.Info($"TPS: {(int)Math.Round(1f / Time.smoothDeltaTime)}");
+                        }
+                   yield return Timing.WaitForSeconds(MegaUtils.instance.Config.TpsCheckDelay);
+                   }
+               }
 		public void OnWaitingForPlayers()
-                {
-                     tpsCoroutine = Timing.RunCoroutine(TpsCoroutine());
-                }
+               {
+                   if (MegaUtils.instance.Config.TpsDebug) 
+                   {
+                   tpsCoroutine = Timing.RunCoroutine(TpsCoroutine());
+                   }  
+               }
 		public void OnRoundEnded(RoundEndedEventArgs ev)
-                {
-                     Timing.KillCoroutines(tpsCoroutine);
-                }
+               {
+                   if (MegaUtils.instance.Config.TpsDebug) 
+                   {
+                   Timing.KillCoroutines(tpsCoroutine);
+                   }  
+               }
 	}
 }

@@ -1,6 +1,8 @@
 using System;
 using Exiled.API.Features;
+using Exiled.API.Enums;
 using ServerHandler = Exiled.Events.Handlers.Server;
+using PlayerHandler = Exiled.Events.Handlers.Player;
 
 namespace MegaUtils
 {
@@ -8,17 +10,19 @@ namespace MegaUtils
 	{
 		public static MegaUtils instance;
 
-		public EventHandler ev { get; set; }
+		private EventHandler ev { get; set; }
 
 		public override string Name => "MegaUtils";
 
 		public override string Author { get; } = "AtomSnow";
 
-                public override Version RequiredExiledVersion { get; } = new Version(5, 0, 0);
+        public override Version RequiredExiledVersion { get; } = new Version(3, 0, 0);
 
-                public override string Prefix { get; } = "MegaUtils";
+        public override string Prefix { get; } = "MegaUtils";
 
-                public override Version Version { get; } = new Version(0, 1, 1);
+        public override Version Version { get; } = new Version(0, 1, 2);
+
+		public override PluginPriority Priority { get; } = PluginPriority.First;
 
 		public override void OnEnabled()
 		{
@@ -32,7 +36,7 @@ namespace MegaUtils
 
 		public override void OnDisabled() 
 		{
-		        ServerHandler.WaitingForPlayers -= ev.OnWaitingForPlayers;
+		    ServerHandler.WaitingForPlayers -= ev.OnWaitingForPlayers;
 			ServerHandler.RoundEnded -= ev.OnRoundEnded;
 			
 			ev = null;
