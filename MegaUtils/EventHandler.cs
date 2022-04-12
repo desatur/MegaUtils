@@ -25,14 +25,8 @@ namespace MegaUtils
                {
                    if (MegaUtils.instance.Config.TpsDebug) 
                    {
-                   tpsCoroutine = Timing.RunCoroutine(TpsCoroutine());
-                   }  
-               }
-		public void OnRoundEnded(RoundEndedEventArgs ev)
-               {
-                   if (MegaUtils.instance.Config.TpsDebug) 
-                   {
                    Timing.KillCoroutines(tpsCoroutine);
+                   tpsCoroutine = Timing.RunCoroutine(TpsCoroutine());
                    }  
                }
 	}
