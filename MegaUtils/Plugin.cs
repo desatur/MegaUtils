@@ -20,7 +20,7 @@ namespace MegaUtils
 
         public override string Prefix { get; } = "MegaUtils";
 
-        public override Version Version { get; } = new Version(0, 1, 2);
+        public override Version Version { get; } = new Version(0, 2, 0);
 
 		public override PluginPriority Priority { get; } = PluginPriority.First;
 
