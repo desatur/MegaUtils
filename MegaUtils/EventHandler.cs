@@ -53,8 +53,8 @@ namespace MegaUtils
                    if (MegaUtils.instance.Config.TpsDebug) 
                    {
                    Timing.KillCoroutines(tpsCoroutine);
-                   tpsCoroutine = Timing.RunCoroutine(TpsCoroutine());
                    Timing.KillCoroutines(tpsAntilag);
+                   tpsCoroutine = Timing.RunCoroutine(TpsCoroutine());
                    tpsCoroutine = Timing.RunCoroutine(TpsAntilag());
                    }  
                }
