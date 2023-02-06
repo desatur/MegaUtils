@@ -34,39 +34,39 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="0Harmony">
-      <HintPath>dep\0Harmony.dll</HintPath>
+      <HintPath>F:\assemblies\0Harmony.dll</HintPath>
     </Reference>
-    <Reference Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Assembly-CSharp">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>dep\Assembly-CSharp.dll</HintPath>
+      <HintPath>F:\assemblies\Assembly-CSharp.dll</HintPath>
     </Reference>
     <Reference Include="Assembly-CSharp-firstpass">
-      <HintPath>dep\Assembly-CSharp-firstpass.dll</HintPath>
+      <HintPath>F:\assemblies\Assembly-CSharp-firstpass.dll</HintPath>
     </Reference>
     <Reference Include="CommandSystem.Core">
-      <HintPath>dep\CommandSystem.Core.dll</HintPath>
+      <HintPath>F:\assemblies\CommandSystem.Core.dll</HintPath>
     </Reference>
     <Reference Include="Exiled.API">
-      <HintPath>dep\Exiled.API.dll</HintPath>
+      <HintPath>F:\assemblies\Exiled.API.dll</HintPath>
     </Reference>
     <Reference Include="Exiled.Events">
-      <HintPath>dep\Exiled.Events.dll</HintPath>
+      <HintPath>F:\assemblies\Exiled.Events.dll</HintPath>
     </Reference>
     <Reference Include="Exiled.Loader">
-      <HintPath>dep\Exiled.Loader.dll</HintPath>
+      <HintPath>F:\assemblies\Exiled.Loader.dll</HintPath>
     </Reference>
     <Reference Include="Mirror">
-      <HintPath>dep\Mirror.dll</HintPath>
+      <HintPath>F:\assemblies\Mirror.dll</HintPath>
     </Reference>
-    <Reference Include="Exiled.Permissions, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>dep\Exiled.Permissions.dll</HintPath>
+    <Reference Include="Exiled.Permissions">
+      <HintPath>F:\assemblies\Exiled.Permissions.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+    <Reference Include="Newtonsoft.Json">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>dep\Newtonsoft.Json.dll</HintPath>
+      <HintPath>F:\assemblies\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="SemVer">
-      <HintPath>dep\SemVer.dll</HintPath>
+      <HintPath>F:\assemblies\SemVer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -77,19 +77,20 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
     <Reference Include="UnityEngine">
-      <HintPath>dep\UnityEngine.dll</HintPath>
+      <HintPath>F:\assemblies\UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
-      <HintPath>dep\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>F:\assemblies\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
     <Reference Include="YamlDotNet">
-      <HintPath>dep\YamlDotNet.dll</HintPath>
+      <HintPath>F:\assemblies\YamlDotNet.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Config.cs" />
     <Compile Include="EventHandler.cs" />
     <Compile Include="Plugin.cs" />
+    <Compile Include="Commands/tps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
