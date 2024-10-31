@@ -1,45 +1,41 @@
-using System;
-using Exiled.API.Features;
 using Exiled.API.Enums;
-using ServerHandler = Exiled.Events.Handlers.Server;
-using PlayerHandler = Exiled.Events.Handlers.Player;
+using Exiled.API.Features;
+using MegaUtils.Utilities;
 
 namespace MegaUtils
 {
 	public class MegaUtils : Plugin<Config>
 	{
-		public static MegaUtils instance;
-
-		private EventHandler ev { get; set; }
+		public static MegaUtils Instance { get; private set; }
+        public EventHandler EventHandler { get; set; }
 
 		public override string Name => "MegaUtils";
-
-		public override string Author { get; } = "AtomSnow";
-
-        public override Version RequiredExiledVersion { get; } = new Version(3, 0, 0);
-
         public override string Prefix { get; } = "MegaUtils";
-
-        public override Version Version { get; } = new Version(0, 2, 0);
+        public override string Author { get; } = "Desatur";
+        public override Version RequiredExiledVersion { get; } = new Version(8, 0, 0);
+        public override Version Version { get; } = new Version(1, 0, 0);
 
 		public override PluginPriority Priority { get; } = PluginPriority.First;
 
 		public override void OnEnabled()
 		{
-			instance = this;
-			ev = new EventHandler();
-			ServerHandler.WaitingForPlayers += ev.OnWaitingForPlayers;
-			
+			Instance = this;
+			EventHandler = new EventHandler();
+            Exiled.Events.Handlers.Server.WaitingForPlayers += EventHandler.OnWaitingForPlayers;
 			base.OnEnabled();
 		}
 
 		public override void OnDisabled() 
 		{
-		    ServerHandler.WaitingForPlayers -= ev.OnWaitingForPlayers;
-			
-			ev = null;
-			base.OnDisabled();
+			EventHandler = null;
+            Exiled.Events.Handlers.Server.WaitingForPlayers -= EventHandler.OnWaitingForPlayers;
+            base.OnDisabled();
 		}
 
-	}
+        public override void OnRegisteringCommands()
+        {
+			UnregisterVanillaCommand.Unregister("ping");
+            base.OnRegisteringCommands();
+        }
+    }
 }

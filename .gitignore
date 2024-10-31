@@ -1,7 +1,8 @@
-
 *.dll
-*.cs
 *.cache
-*.pdb
-*.CopyComplete
 *.txt
+*.pd
+MegaUtils/obj
+MegaUtils/bin
+packages
+.vs

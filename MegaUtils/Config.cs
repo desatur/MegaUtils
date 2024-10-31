@@ -8,7 +8,10 @@ namespace MegaUtils
 		[Description("Whether or not the plugin is enabled.")]
 		public bool IsEnabled { get; set; } = true;
 
-		[Description("Time between every TPS check. (in seconds)")]
+        [Description("Whether or not the debug info should be printed out.")]
+        public bool Debug { get; set; } = false;
+
+        [Description("Time between every TPS check. (in seconds)")]
 		public float TpsCheckDelay { get; set; } = 5;
 
 		[Description("Turn on TPS Debugger.")]
@@ -24,6 +27,6 @@ namespace MegaUtils
 		public float TpsDeadline { get; set; } = 20;
 
 		[Description("Minimum number of players to start round.")]
-		public float MinimumPlayers { get; set; } = 1;		
-	}
+		public float MinimumPlayers { get; set; } = 1;
+    }
 }
